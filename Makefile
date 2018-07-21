@@ -33,7 +33,7 @@ test-plugin:
 	diff -u /tmp/echo.grpc.swift Sources/Examples/Echo/Generated/echo.grpc.swift
 
 xcodebuild: project
-		xcodebuild -configuration "Debug" -parallelizeTargets -target SwiftGRPC -target Echo -target Simple -target protoc-gen-swiftgrpc build
+	xcodebuild -configuration "Debug" -parallelizeTargets -target SwiftGRPC -target Echo -target Simple -target protoc-gen-swiftgrpc build
 
 clean:
 	rm -rf Packages
@@ -41,5 +41,3 @@ clean:
 	rm -rf SwiftGRPC.xcodeproj
 	rm -rf Package.pins Package.resolved
 	rm -rf protoc-gen-swift protoc-gen-swiftgrpc
-	cd Examples/Echo/PackageManager; make clean
-	cd Examples/Simple/PackageManager; make clean
